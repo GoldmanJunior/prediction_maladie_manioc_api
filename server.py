@@ -10,6 +10,8 @@ app = FastAPI()
 # Charger le modèle
 model = tf.keras.models.load_model('cassava_model.h5')
 class_names = ['CBB', 'CBSD', 'CGM', 'CMD', 'Healthy']
+print("Modèle chargé :", model)  # Pour confirmer qu'il est bien chargé
+
 
 @app.post('/predict')
 async def predict(file: UploadFile = File(...)):

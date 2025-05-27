@@ -3,4 +3,4 @@ services:
     name: prediction-maladie-manioc-api
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn -k uvicorn.workers.UvicornWorker -b 0.0.0.0:$PORT server:app
+    startCommand: gunicorn -k uvicorn.workers.UvicornWorker -b 0.0.0.0:$PORT server:app --timeout=120
