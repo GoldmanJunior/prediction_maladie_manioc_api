@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: prediction-maladie-manioc-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -k uvicorn.workers.UvicornWorker -b 0.0.0.0:$PORT server:app
